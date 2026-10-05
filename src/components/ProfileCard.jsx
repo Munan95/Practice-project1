@@ -7,7 +7,7 @@ import ContactCredential from "./ContactCredential";
 
 const ProfileCard = () => {
     return (
-        <div className="flex flex-col border-2 border-white w-130 bg-white rounded-xl gap-10">
+        <div className="font-google flex flex-col border-2 border-white w-130 bg-white rounded-xl gap-10">
 
             {/* Banner + Profile Photo */}
             <div className="relative">
@@ -44,21 +44,21 @@ const ProfileCard = () => {
                         John Doe
                     </h1>
 
-                    <p className="text-base text-gray-800 py-1">
+                    <p className="text-md text-gray-800 py-1">
                         Product Designer | Senior User Experience Designer
                     </p>
 
                     <div className="flex items-center gap-1 py-1">
-                        <MapPin size={18} className="text-gray-600" />
+                        <MapPin size={16} className="text-gray-600" />
 
-                        <p className="text-sm text-gray-600">
+                        <p className="text-sm text-gray-700">
                             Los Angeles, California, United States Of America
                         </p>
                     </div>
                 </div>
 
                 {/* Description */}
-                <p className="text-sm text-gray-800 py-4">
+                <p className="text-sm text-gray-700 py-4 pr-8">
                     As a product designer with UX experience, I am passionate
                     about creating products that meet the needs of users while
                     delivering a beautiful and intuitive experience. I understand
