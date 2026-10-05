@@ -5,16 +5,16 @@ import { Brain } from "lucide-react";
 import { Pencil } from "lucide-react";
 import ContactCredential from "./ContactCredential";
 
-const ProfileCard = () => {
+const ProfileCard = ({profile}) => {
     return (
-        <div className="font-google flex flex-col border-2 border-white w-130 bg-white rounded-xl gap-10">
+        <div className="font-google flex flex-col border-2 border-white w-110 bg-white rounded-xl gap-10">
 
             {/* Banner + Profile Photo */}
             <div className="relative">
 
                 {/* Banner Image */}
                 <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtskw-1fzLJWb4YM_8WSOPNuSIrSHenD8tPSkEg-K8Dw&s=10"
+                    src={profile.bannerImage}
                     alt="Banner image"
                     className="w-full h-50 rounded-t-xl"
                 />
@@ -22,8 +22,8 @@ const ProfileCard = () => {
                 {/* Profile Photo */}
                 <div className="absolute left-6 -bottom-12">
                     <img
-                        src="https://i.pravatar.cc/150?img=12"
-                        alt="John Doe"
+                        src={profile.profileImage}
+                        alt="Profile image"
                         className="w-28 h-28 rounded-full object-cover border-4 border-white"
                     />
                 </div>
@@ -38,32 +38,28 @@ const ProfileCard = () => {
             {/* Profile Content */}
             <div className="p-6">
 
-                {/* Name and Job */}
+                {/* Name and Job */} 
                 <div>
                     <h1 className="text-2xl font-bold">
-                        John Doe
+                        {profile.name}
                     </h1>
 
                     <p className="text-md text-gray-800 py-1">
-                        Product Designer | Senior User Experience Designer
+                        {profile.job}
                     </p>
 
                     <div className="flex items-center gap-1 py-1">
                         <MapPin size={16} className="text-gray-600" />
 
                         <p className="text-sm text-gray-700">
-                            Los Angeles, California, United States Of America
+                            {profile.location}
                         </p>
                     </div>
                 </div>
 
                 {/* Description */}
                 <p className="text-sm text-gray-700 py-4 pr-8">
-                    As a product designer with UX experience, I am passionate
-                    about creating products that meet the needs of users while
-                    delivering a beautiful and intuitive experience. I understand
-                    that design goes beyond aesthetics and must be rooted in
-                    user needs and behavior.
+                    {profile.description}
                 </p>
 
                 {/* Contact Information */}
@@ -72,15 +68,15 @@ const ProfileCard = () => {
                     <div className="flex flex-col gap-2">
                         <ContactCredential
                             iconName="mail"
-                            credential="example@gmail.com"
+                            credential={profile.email}
                         />
                         <ContactCredential
                             iconName="calendar"
-                            credential="12 December, 1992"
+                            credential={profile.birthDate}
                         />
                         <ContactCredential
                             iconName="phone"
-                            credential="(842) 335-6577"
+                            credential={profile.phone}
                         />
                     </div>
 
@@ -90,7 +86,7 @@ const ProfileCard = () => {
                 <div className="flex items-center justify-between pt-8">
 
                     <p className="text-xs text-gray-700">
-                        Join on 12 Jan 2025
+                        {profile.joinDate}
                     </p>
 
                     <div className="flex items-center gap-2">
